@@ -13,7 +13,15 @@ function buildGauge(g_level) {
     var path = mainPath.concat(`${x}  ${y}  z`);
     console.log(path);
 
-    // Creating the data array for the Gauge plot
+    // Creting the Gauge arc step values 
+    var steps = 9;
+    var arc = 50;
+    var values = Array(9).fill(1).map(i => arc / steps);
+
+    // adding the other half (50) of the circle to my values
+    values = values.concat(50);
+    console.log(values)
+        // Creating the data array for the Gauge plot
     var data = [{
             type: 'scatter',
             x: [0],
@@ -30,7 +38,7 @@ function buildGauge(g_level) {
             type: 'pie',
             showlegend: false,
             marker: { colors: ['FFFFFF', 'rgba(240, 230,215,.5)', 'rgba(232,226,202,.5)', 'rgba(210,206,145,.5)', 'rgba(202,209,95,.5)', 'rgba(170,202,42,.5)', 'rgba(110,154,22,.5)', 'rgba(14,127,0,.5)', 'rgba(10,120,22,.5)', 'rgba(0,105,11,.5)'].reverse() },
-            values: [50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50],
+            values: values,
             rotation: 90,
             text: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1'],
             hoverinfo: 'text'
@@ -60,6 +68,7 @@ function buildGauge(g_level) {
             b: 0,
             t: 150
         },
+        // Scaling the axes 
         xaxis: { zeroline: false, showticklabels: false, showgrid: false, range: [-1, 1] },
         yaxis: { zeroline: false, showticklabels: false, showgrid: false, range: [-1, 1] }
     };
