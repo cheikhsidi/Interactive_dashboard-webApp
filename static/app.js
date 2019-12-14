@@ -57,7 +57,7 @@ function buildCharts(sample) {
             margin: { t: 0 },
             hovermode: "closests",
             height: 600,
-            width: 1800,
+            width: 1600,
             xaxis: {
                 title: "OTU ID",
                 zeroline: true

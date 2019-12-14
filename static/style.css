@@ -1,5 +1,5 @@
 .wrapper {
-    width: 1800px;
+    width: 1600px;
     margin: 0 auto;
 }
 
@@ -50,7 +50,7 @@ h2 {
 .card-text {
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 #bbl-plot {
